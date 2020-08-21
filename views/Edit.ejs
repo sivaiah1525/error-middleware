@@ -1,0 +1,170 @@
+<%- include('includes/head.ejs') %>
+
+<div class="container text-center mt-5">
+  <h3>User Details</h3>
+  <form action="/editdata" method="POST">
+    <div class="row">
+      <div class="col-md-6">
+        <label>User Name</label>
+        <input
+          type="text"
+          class="form-control"
+          name="name"
+          required
+          maxlength="15"
+          value="<%= usersData.name%>"
+        />
+        <input
+          type="hidden"
+          class="form-control"
+          name="id"
+          required
+          maxlength="15"
+          value="<%= usersData.id%>"
+        />
+      </div>
+      <div class="col-md-6">
+        <label>User Email</label>
+        <input
+          type="email"
+          class="form-control"
+          name="email"
+          value="<%= usersData.email%>"
+          required
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <label>Dob</label>
+        <input
+          type="date"
+          class="form-control"
+          value="<%= usersData.dob%>"
+          name="dob"
+          required
+        />
+      </div>
+      <div class="col-md-6">
+        <label>Age</label>
+        <input
+          type="number"
+          class="form-control"
+          name="age"
+          required
+          maxlength="2"
+          value="<%= usersData.age%>"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <label>Gender</label>
+        <select class="form-control" name="gender">
+          <option>Male</option>
+          <option>Female</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label>Password</label>
+        <input
+          type="password"
+          class="form-control"
+          name="password"
+          required
+          maxlength="15"
+          value="<%= usersData.password%>"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <label>Country Code</label>
+        <input
+          type="number"
+          class="form-control"
+          name="countrycode"
+          required
+          maxlength="2"
+          value="<%= usersData.countrycode%>"
+        />
+      </div>
+      <div class="col-md-6">
+        <label>Contact Number</label>
+        <input
+          type="number"
+          class="form-control"
+          name="contactnumber"
+          required
+          maxlength="10"
+          value="<%= usersData.contactnumber%>"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <label>Skills</label>
+        <textarea class="form-control" cols="5" rows="3" name="skills" required>
+        <%=usersData.skills[0]%>
+    </textarea
+        >
+      </div>
+      <div class="col-md-6">
+        <label>Address</label>
+        <textarea
+          class="form-control"
+          cols="5"
+          rows="3"
+          name="address"
+          required
+        >
+       <%=usersData.address%></textarea
+        >
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <label>Pin code</label>
+        <input
+          type="number"
+          class="form-control"
+          name="pincode"
+          required
+          maxlength="10"
+          value="<%= usersData.pincode%>"
+        />
+      </div>
+      <div class="col-md-6">
+        <label>Location</label>
+        <div class="row">
+          <div class="col-md-6">
+            <input
+              type="text"
+              class="form-control"
+              name="location"
+              required
+              maxlength="15"
+              value="<%= usersData.location[0]%>"
+            />
+          </div>
+          <div class="col-md-6">
+            <input
+              type="text"
+              class="form-control"
+              name="location"
+              required
+              maxlength="15"
+              value="<%= usersData.location[1]%>"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 mt-3">
+        <button class="btn btn-info btn-lg ">Edit User</button>
+      </div>
+    </div>
+  </form>
+</div>
+<%- include('includes/end.ejs') %>
